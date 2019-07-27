@@ -1,4 +1,4 @@
-# IT 매거진
+# IT 프로그래밍
 
 ## Back End
 <br>
