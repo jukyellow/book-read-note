@@ -1,20 +1,14 @@
 # IT 매거진
 
-### 1. [Micro Software (2019 vol.394)](https://github.com/jukyellow/book-read-note/blob/master/04_IT_%EB%A7%A4%EA%B1%B0%EC%A7%84/Micro%20Software%20(2019%20vol.397).md)  
-- 저자:
-- 분류: IT >> 매거진
-- 출간: 2018년 9월
-- 독서기간: 2018/11 ~
+## Back End
+<br>
 
-### 2. [Micro Software (2019 vol.395)](https://github.com/jukyellow/book-read-note/blob/master/04_IT_%EB%A7%A4%EA%B1%B0%EC%A7%84/README.md)  
-- 저자:
-- 분류: IT >> 매거진
-- 출간: 2019년 1월
-- 독서기간: 
+## Front End
+<br>
 
-### 3. [Micro Software (2019 vol.397)](https://github.com/jukyellow/book-read-note/blob/master/04_IT_%EB%A7%A4%EA%B1%B0%EC%A7%84/Micro%20Software%20(2019%20vol.397).md)  
-- 저자:
-- 분류: IT >> 매거진
-- 출간: 2019년 7월
-- 독서기간:
+### 1. [Vue.js 입문](https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/README.md)  - 저자: 장기효
+- 분류: IT >> 웹 >> Javascript Framework
+- 출간: 2018년 2월
+- 독서기간: 2019/1 ~
+
 
