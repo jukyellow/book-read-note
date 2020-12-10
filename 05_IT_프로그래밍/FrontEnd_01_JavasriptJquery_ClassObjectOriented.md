@@ -1,6 +1,7 @@
 # FrontEnd_01_JavasriptJquery_ClassObjectOriented
 
 - 참고도서 샘플소스: http://www.webdongne.com/bbs/bbs/board.php?bo_table=wbook_list&wr_id=10  
+<br>
 
 ### 5. 자바스크립트 클래스와 클래스 단위 프로그래밍
 
@@ -56,12 +57,13 @@ user.showInfo(); // 메서드 호출
 - 패키지  
 
 #### 5.3 Jquery 플러그인 제작
-- Jquery 확장  
-- Jquery 유틸리티 구현
-- Jquery 플러그인 구현
+- Jquery 확장   
+- Jquery 유틸리티 구현  
+- Jquery 플러그인 구현  
 
 <br>
-### 6. 자바스크립트 객체지향 프로그래밍  
+
+### 6. 자바스크립트 객체지향 프로그래밍   
 
 #### 6.1 객체지향 프로그래맹 특징 4가지(추상화, 캡슐화, 상속, 다형성)  
 
