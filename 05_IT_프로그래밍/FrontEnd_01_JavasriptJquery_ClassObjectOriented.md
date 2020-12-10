@@ -1,4 +1,4 @@
-# FrontEnd_01_JavasriptJquery_ClassObjectOriented
+# 효율적 유지보수를 위한 자바스크립트 클래스 활용과 객체지향 프로그래밍 개발방법
 
 - 참고도서 샘플소스: http://www.webdongne.com/bbs/bbs/board.php?bo_table=wbook_list&wr_id=10  
 <br>
