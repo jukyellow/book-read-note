@@ -51,7 +51,7 @@ user.showInfo(); // 메서드 호출
 <br>
 
 #### 5.1.4. 클래스 정의방법(리터럴, 함수, 프로토타입) 별 특징  
-##### 5.1.4.1 리터럴 방식
+1) 리터럴 방식  
 - 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_1_literal_exam.html  
 - 단점: 중복코드가 많아짐  
 - 활용: 매개변수를 하나로 묶을때 유용 
@@ -68,12 +68,12 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 	document.write("name = "+userInfo.userName, "id = "+userInfo.id, ", nickName = "+userInfo.nickName, ", age = "+userInfo.age, ", address = "+userInfo.address);
 }
 ```
-##### 5.1.4.2. 함수 방식
+2) 함수 방식  
 - 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_2_funtion_exam.html  
 - 개선된 점: 코드 재사용가능  
 - 단점: 메소드가 객체마다 중복해서 생성됨  
 
-##### 5.1.4.3. 프로토타입 방식
+3) 프로토타입 방식  
 - 예제 : https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_3_prototype.html    
 - 장점 : 코드 재사용 가능, 메소드 공유 가능  
 - 기타 : Jquery도 프로토타입 방식 클래스로 구현됨  
