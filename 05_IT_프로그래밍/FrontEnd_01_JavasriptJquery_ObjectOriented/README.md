@@ -74,7 +74,7 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 - 단점: 메소드가 객체마다 중복해서 생성됨  
 
 ##### 5.1.3. 프로토타입 방식
-- 예제 : 5_1_3_prototype.html  
+- 예제 : https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_3_prototype.html    
 - 장점 : 코드 재사용 가능, 메소드 공유 가능  
 - 기타 : Jquery도 프로토타입 방식 클래스로 구현됨  
 
