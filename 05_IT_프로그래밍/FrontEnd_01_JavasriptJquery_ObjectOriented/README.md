@@ -7,7 +7,7 @@
 ## 5. 자바스크립트 클래스와 클래스 단위 프로그래밍
 
 ### 5.1 자바스크립트에서 클래스란
-- 자바스크립트에서는 class 문법을 지원하지 않음(ES6 이전), class 기반 언어가 아닌 function 기반 언어이다.    
+- 자바스크립트에서는 class 문법을 지원하지 않음(ES6 이전), class 기반 언어가 아닌 프로토타입 기반 언어이다.  
 - 자바스크립트에서 클래스를 구현하는 방법 3가지 : 리터럴, 함수, 프로토타입   
 #### 5.1.1. 리터럴 예제  
 ``` javascript
@@ -48,6 +48,10 @@ User.prototype.showInfo = function(){
 var user = new User(); // 인스턴스 생성		
 user.showInfo(); // 메서드 호출 
 ```
+- 참고: 자바스크립트 프로토타입이란?(http://insanehong.kr/post/javascript-prototype/)  
+![image](https://user-images.githubusercontent.com/45334819/101922363-58642200-3c11-11eb-930e-e60e6a10b645.png)
+
+
 <br>
 
 #### 5.1.4. 클래스 정의방법(리터럴, 함수, 프로토타입) 별 특징  
