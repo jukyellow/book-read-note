@@ -51,7 +51,7 @@ user.showInfo(); // 메서드 호출
 
 - 클래스 정의방법(리터럴, 함수, 프로토타입) 별 특징  
 ##### 5.1.1 리터럴 방식
-- 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/02_06_%EC%98%88%EC%A0%9C02_%EB%8B%A8%EC%9D%BC%ED%83%AD%EB%A9%94%EB%89%B4_%EB%8B%A8%EA%B3%8406_%EA%B0%9D%EC%B2%B4%EC%99%B8%EB%B6%80%EC%97%90%EC%84%9C_%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EC%99%80%EB%A9%94%EC%84%9C%EB%93%9C_%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0.html  
+- 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_1_literal_exam.html  
 - 단점: 중복코드가 많아짐  
 - 활용: 매개변수를 하나로 묶을때 유용 
 ``` javascript
@@ -69,6 +69,7 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 ```
 
 - 클래스 정의방법 3가지 비교  
+
 |방식|특징|
 |:---:|---|
 |프로토타입 방식|일반적인 클래스 제작방법|
