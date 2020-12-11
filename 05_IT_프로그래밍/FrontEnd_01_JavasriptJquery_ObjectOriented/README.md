@@ -6,10 +6,10 @@
 
 ## 5. 자바스크립트 클래스와 클래스 단위 프로그래밍
 
-#### 5.1 자바스크립트에서 클래스란
+### 5.1 자바스크립트에서 클래스란
 - 자바스크립트에서는 class 문법을 지원하지 않음(ES6 이전), class 기반 언어가 아닌 function 기반 언어이다.    
 - 자바스크립트에서 클래스를 구현하는 방법 3가지 : 리터럴, 함수, 프로토타입   
-1. 리터럴 예제  
+#### 5.1.1. 리터럴 예제  
 ``` javascript
 var user = {
 	name:"ddandonge",
@@ -20,7 +20,7 @@ var user = {
 }    
 user.showInfo();  // 메서드 호출
 ```
-2. 함수 예제  
+#### 5.1.2. 함수 예제  
 ``` javascript
 // 클래스 정의
 function User(){
@@ -33,7 +33,7 @@ function User(){
 var user = new User(); // 인스턴스 생성		
 user.showInfo(); // 메서드 호출
 ```
-3. 프로토타입 예제  
+#### 5.1.3. 프로토타입 예제  
 ``` javascript
 // 클래스 생성자
 function User(){
@@ -50,8 +50,8 @@ user.showInfo(); // 메서드 호출
 ```
 <br>
 
-- 클래스 정의방법(리터럴, 함수, 프로토타입) 별 특징  
-##### 5.1.1 리터럴 방식
+#### 5.1.4. 클래스 정의방법(리터럴, 함수, 프로토타입) 별 특징  
+##### 5.1.4.1 리터럴 방식
 - 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_1_literal_exam.html  
 - 단점: 중복코드가 많아짐  
 - 활용: 매개변수를 하나로 묶을때 유용 
@@ -68,17 +68,17 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 	document.write("name = "+userInfo.userName, "id = "+userInfo.id, ", nickName = "+userInfo.nickName, ", age = "+userInfo.age, ", address = "+userInfo.address);
 }
 ```
-##### 5.1.2 함수 방식
+##### 5.1.4.2. 함수 방식
 - 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_2_funtion_exam.html  
 - 개선된 점: 코드 재사용가능  
 - 단점: 메소드가 객체마다 중복해서 생성됨  
 
-##### 5.1.3. 프로토타입 방식
+##### 5.1.4.3. 프로토타입 방식
 - 예제 : https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_3_prototype.html    
 - 장점 : 코드 재사용 가능, 메소드 공유 가능  
 - 기타 : Jquery도 프로토타입 방식 클래스로 구현됨  
 
-- 클래스 정의방법 3가지 비교  
+#### 5.1.5. 클래스 정의방법 3가지 비교  
 
 |방식|특징|
 |:---:|---|
@@ -93,14 +93,14 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 
 
 
-#### 5.2 클래스 중급
+### 5.2 클래스 중급
 - this  
 - 함수호출 vs new 함수호출  
 - 함수단위 코딩 vs 클래스 단위코딩  
 - 인스턴스 프로퍼티 메서드 vs 클래스 프로퍼티 메소드  
 - 패키지  
 
-#### 5.3 Jquery 플러그인 제작
+### 5.3 Jquery 플러그인 제작
 - Jquery 확장   
 - Jquery 유틸리티 구현  
 - Jquery 플러그인 구현  
@@ -110,12 +110,12 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 
 ## 6. 자바스크립트 객체지향 프로그래밍   
 
-#### 6.1 객체지향 프로그래맹 특징 4가지(추상화, 캡슐화, 상속, 다형성)  
+### 6.1 객체지향 프로그래맹 특징 4가지(추상화, 캡슐화, 상속, 다형성)  
 
-#### 6.2 자바스크립트 상속
+### 6.2 자바스크립트 상속
 
-#### 6.3 자바스크립트 다형성  
+### 6.3 자바스크립트 다형성  
 
-#### 6.4 합성  
+### 6.4 합성  
 
 <br>
