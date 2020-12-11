@@ -48,8 +48,8 @@ User.prototype.showInfo = function(){
 var user = new User(); // 인스턴스 생성		
 user.showInfo(); // 메서드 호출 
 ```
-- 참고: 자바스크립트 프로토타입이란?(http://insanehong.kr/post/javascript-prototype/)  
-![image](https://user-images.githubusercontent.com/45334819/101922363-58642200-3c11-11eb-930e-e60e6a10b645.png)
+- 참고: 자바스크립트 프로토타입이란?(http://insanehong.kr/post/javascript-prototype/, http://www.nextree.co.kr/p7323/)  
+![image](https://user-images.githubusercontent.com/45334819/101923592-f2789a00-3c12-11eb-9797-fc11fb2f24cf.png)  
 
 
 <br>
