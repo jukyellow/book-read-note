@@ -47,7 +47,14 @@ User.prototype.showInfo = function(){
 var user = new User(); // 인스턴스 생성		
 user.showInfo(); // 메서드 호출 
 ```
+
 - 클래스 정의방법 3가지 비교  
+| 방식 | 특징 |
+| 프로토타입 방식 | * 일반적인 클래스 제작방법 |
+| 프로토타입 방식 | * 일반적인 클래스 제작방법 |
+
+
+
 
 #### 5.2 클래스 중급
 - this  
