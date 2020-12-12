@@ -124,21 +124,21 @@ $(document).ready(function(){
 /* 실행결과  1. data = 30, 2. this.data = 20,  3. window.data = 30 */
 
 // 클래스 정의
-        function MyClass() {
-            // 프로퍼티 정의
-            this.data=0;
-        }
-        // 메서드 정의
-        MyClass.prototype.method1=function(){
-            this.data=20;
-            data=30;
-            console.log("1. data1 = "+data);
-            console.log("2. this.data = "+this.data);
-            console.log("3. window.data = "+window.data);
-        }
-        var my1 = new MyClass(); // 인스턴스 생성       
-        my1.method1();  // 메서드 호출
-        /* 실행결과 : 1. data = 30, 2. this.data = 20, 3. window.data = 30 */
+function MyClass() {
+    // 프로퍼티 정의
+    this.data=0;
+}
+// 메서드 정의
+MyClass.prototype.method1=function(){
+    this.data=20;
+    data=30;
+    console.log("1. data1 = "+data);
+    console.log("2. this.data = "+this.data);
+    console.log("3. window.data = "+window.data);
+}
+var my1 = new MyClass(); // 인스턴스 생성       
+my1.method1();  // 메서드 호출
+/* 실행결과 : 1. data = 30, 2. this.data = 20, 3. window.data = 30 */
 ```
 
 #### 5.2.2 함수호출 vs new 함수호출  
