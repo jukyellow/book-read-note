@@ -56,7 +56,7 @@ user.showInfo(); // 메서드 호출
 <br>
 
 #### 5.1.4. 클래스 정의방법(리터럴, 함수, 프로토타입) 별 특징  
-1) 리터럴 방식  
+**1) 리터럴 방식**  
 - 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_1_literal_exam.html  
 - 단점: 중복코드가 많아짐  
 - 활용: 매개변수를 하나로 묶을때 유용 
@@ -73,12 +73,12 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 	document.write("name = "+userInfo.userName, "id = "+userInfo.id, ", nickName = "+userInfo.nickName, ", age = "+userInfo.age, ", address = "+userInfo.address);
 }
 ```
-2) 함수 방식  
+**2) 함수 방식**  
 - 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_2_funtion_exam.html  
 - 개선된 점: 코드 재사용가능  
 - 단점: 메소드가 객체마다 중복해서 생성됨  
 
-3) 프로토타입 방식  
+**3) 프로토타입 방식**  
 - 예제 : https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_1_3_prototype.html    
 - 장점 : 코드 재사용 가능, 메소드 공유 가능  
 - 기타 : Jquery도 프로토타입 방식 클래스로 구현됨  
@@ -107,8 +107,46 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 |이벤트에서|이벤트를 발생시킨 객체|
 |메소드에서|메소드를 호출한 객체|
 |메소드 내부의 중첩 함수에서|window 객체|
-  
+
+``` javascript
+var data=10;
+$(document).ready(function(){
+    // 이벤트 리스너 등록
+    $("#myButton").click(function(){
+	this.data=20;
+	data=30;
+
+	console.log("1. data1 = "+data);
+	console.log("2. this.data = "+this.data);
+	console.log("3. window.data = "+window.data);
+    });
+});
+/* 실행결과  1. data = 30, 2. this.data = 20,  3. window.data = 30 */
+
+// 클래스 정의
+        function MyClass() {
+            // 프로퍼티 정의
+            this.data=0;
+        }
+        // 메서드 정의
+        MyClass.prototype.method1=function(){
+            this.data=20;
+            data=30;
+            console.log("1. data1 = "+data);
+            console.log("2. this.data = "+this.data);
+            console.log("3. window.data = "+window.data);
+        }
+        var my1 = new MyClass(); // 인스턴스 생성       
+        my1.method1();  // 메서드 호출
+        /* 실행결과 : 1. data = 30, 2. this.data = 20, 3. window.data = 30 */
+```
+
 #### 5.2.2 함수호출 vs new 함수호출  
+|구분|함수이름()|new 함수이름|
+|---|---|---|
+|해석|일반함수 호출|new 클래스이름()으로 해석, 특정 클래스의 인스턴스를 생성|
+|this내용|window 객체|인스턴스|
+  
 #### 5.2.3 함수단위 코딩 vs 클래스 단위코딩  
 #### 5.2.4 인스턴스 프로퍼티 메서드 vs 클래스 프로퍼티 메소드  
 #### 5.2.5 패키지  
