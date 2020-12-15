@@ -161,6 +161,26 @@ my1.method1();  // 메서드 호출
 |this내용|window 객체|인스턴스|
   
 #### 5.2.3 함수단위 코딩 vs 클래스 단위코딩  
+``` javascript
+<script>
+var userName ="test";
+// 함수 정의
+function User(name){
+    this.userName=name; // 전역 변수 접근
+}
+User("ddandongne"); // 호출
+console.log("1. uesrName = "+userName); /* 실행결과 :  userName = ddandongne  */
+ 
+var userName ="test";
+// 클래스 정의
+function User(name){
+    this.userName=name; // 프로퍼티 접근.
+}
+var user = new User("ddandongne"); // 호출
+console.log("1. uesrName = "+userName); /* 실행결과 :  userName = test  */
+</script>
+```
+
 #### 5.2.4 인스턴스 프로퍼티 메서드 vs 클래스 프로퍼티 메소드  
 #### 5.2.5 패키지  
 
