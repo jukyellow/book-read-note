@@ -102,14 +102,26 @@ function showInfo(userInfo){ // 함수에서 데이터 사용
 
 |this가 만들어지는 경우|this 값|
 |---|---|
-|일반함수에서|window 객체|
-|중첩함수에서|window 객체|
-|이벤트에서|이벤트를 발생시킨 객체|
-|메소드에서|메소드를 호출한 객체|
-|메소드 내부의 중첩 함수에서|window 객체|
+|1.일반함수에서|window 객체|
+|2.중첩함수에서|window 객체|
+|3.이벤트에서|이벤트를 발생시킨 객체|
+|4.메소드에서|메소드를 호출한 객체|
+|5.메소드 내부의 중첩 함수에서|window 객체|
 
 ``` javascript
+<script>
 var data=10;
+function outer(){
+    this.data=20;
+    data=30;
+
+    document.write("1. data1 = "+data,"<br>");
+    document.write("2. this.data = "+this.data,"<br>");
+    document.write("3. window.data = "+window.data,"<br>");
+}
+outer();
+/* 1.출력결과: 1. data = 30, 2. this.data = 30, 3. window.data = 30 */  
+
 $(document).ready(function(){
     // 이벤트 리스너 등록
     $("#myButton").click(function(){
@@ -121,7 +133,7 @@ $(document).ready(function(){
 	console.log("3. window.data = "+window.data);
     });
 });
-/* 실행결과  1. data = 30, 2. this.data = 20,  3. window.data = 30 */
+/* 3.실행결과  1. data = 30, 2. this.data = 20,  3. window.data = 30 */
 
 // 클래스 정의
 function MyClass() {
@@ -138,7 +150,8 @@ MyClass.prototype.method1=function(){
 }
 var my1 = new MyClass(); // 인스턴스 생성       
 my1.method1();  // 메서드 호출
-/* 실행결과 : 1. data = 30, 2. this.data = 20, 3. window.data = 30 */
+/* 4.실행결과 : 1. data = 30, 2. this.data = 20, 3. window.data = 30 */
+</script>
 ```
 
 #### 5.2.2 함수호출 vs new 함수호출  
