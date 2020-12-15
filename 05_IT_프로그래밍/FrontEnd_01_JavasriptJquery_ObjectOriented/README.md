@@ -160,7 +160,6 @@ my1.method1();  // 메서드 호출
 |해석|일반함수 호출|new 클래스이름()으로 해석, 특정 클래스의 인스턴스를 생성|
 |this내용|window 객체|인스턴스|
   
-#### 5.2.3 함수단위 코딩 vs 클래스 단위코딩  
 ``` javascript
 <script>
 var userName ="test";
@@ -181,6 +180,7 @@ console.log("1. uesrName = "+userName); /* 실행결과 :  userName = test  */
 </script>
 ```
 
+#### 5.2.3 함수단위 코딩 vs 클래스 단위코딩  
 #### 5.2.4 인스턴스 프로퍼티 메서드 vs 클래스 프로퍼티 메소드  
 #### 5.2.5 패키지  
 
