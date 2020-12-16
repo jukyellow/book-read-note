@@ -181,6 +181,81 @@ console.log("1. uesrName = "+userName); /* 실행결과 :  userName = test  */
 ```
 
 #### 5.2.3 함수단위 코딩 vs 클래스 단위코딩  
+``` javascript
+$(document).ready(function(){
+    var tab1 = tabMenu("#tabMenu1");
+    tab1.setSelectItemAt(1); // 1번째 탭메뉴 아이템 선택
+    var tab2 = tabMenu("#tabMenu2");
+    tab2.setSelectItemAt(2);    // 2번재 탭메뉴 아이템 선택
+});
+function tabMenu(selector){
+    var $tabMenu =null;
+    var $menuItems=null;
+    var $selectMenuItem=null;
+    function init(selector){ // 요소 초기화
+	$tabMenu = $(selector);
+	$menuItems = $tabMenu.find("li");
+    }
+    function initEvent(){ // 이벤트 등록
+	$menuItems.on("click",function(){
+	    setSelectItem($(this));
+	});
+    }
+    function setSelectItem($menuItem){ // $menuItem에 해당하는 메뉴 아이템 선택하기
+	if($selectMenuItem){ // 기존 선택메뉴 아이템을 비활성화 처리하기
+	    $selectMenuItem.removeClass("select");
+	}
+	$selectMenuItem = $menuItem; // 신규 아이템 활성화 처리하기
+	$selectMenuItem.addClass("select");
+    }
+    function setSelectItemAt(index){ // index에 해당하는 메뉴 아이템 선택하기
+    	setSelectItem($menuItems.eq(index)); // setSelectItem() 호출
+    }
+    init(selector); // 초기화 함수 호출
+    initEvent();
+    // 기능 리턴
+    return  {
+	"setSelectItemAt":setSelectItemAt
+    }
+}
+
+$(document).ready(function(){
+            var tab1 = new TabMenu("#tabMenu1"); // 인스턴스 생성
+            tab1.setSelectItemAt(1); // 1번째 탭메뉴 아이템 선택
+            var tab2 = new TabMenu("#tabMenu2");
+            tab2.setSelectItemAt(2); // 2번째 탭메뉴 아이템 선택
+        });
+        function TabMenu(selector) {
+            this.$tabMenu = null;
+            this.$menuItems = null;
+            this.$selectMenuItem = null;
+            this.init(selector); // 요소 초기화 및 이벤트 등록 호출하기
+            this.initEvent();
+        }
+        TabMenu.prototype.init = function(selector) { // 요소 초기화
+            this.$tabMenu = $(selector);
+            this.$menuItems = this.$tabMenu.find("li");
+        }
+        TabMenu.prototype.initEvent = function() { // 이벤트 등록
+            var objThis = this;
+            this.$menuItems.on("click", function() {
+                objThis.setSelectItem($(this));
+            });
+        }
+        TabMenu.prototype.setSelectItem = function($menuItem) { // $menuItem에 해당하는 메뉴 아이템 선택하기
+            if (this.$selectMenuItem) { // 기존 선택메뉴 아이템을 비활성화 처리하기
+                this.$selectMenuItem.removeClass("select");
+            }
+            this.$selectMenuItem = $menuItem; // 신규 아이템 활성화 처리하기
+            this.$selectMenuItem.addClass("select");
+        }
+        // index에 해당하는 메뉴 아이템 선택하기
+        TabMenu.prototype.setSelectItemAt=function(index){
+            var $menuItem = this.$menuItems.eq(index);
+            this.setSelectItem($menuItem); // 기존 메서드 재사용
+        }
+```
+
 #### 5.2.4 인스턴스 프로퍼티 메서드 vs 클래스 프로퍼티 메소드  
 #### 5.2.5 패키지  
 
