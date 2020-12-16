@@ -181,6 +181,7 @@ console.log("1. uesrName = "+userName); /* 실행결과 :  userName = test  */
 ```
 
 #### 5.2.3 함수단위 코딩 vs 클래스 단위코딩  
+- 참고소스: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_3_3_class_coding.html  
 ``` javascript
 $(document).ready(function(){
     var tab1 = tabMenu("#tabMenu1");
