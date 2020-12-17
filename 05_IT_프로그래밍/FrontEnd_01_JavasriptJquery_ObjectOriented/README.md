@@ -1,5 +1,6 @@
 # 효율적 유지보수를 위한 Javascript/Jquery 객체지향 프로그래밍 개발방법
 
+- 참고도서 : Javascript/Jquery 완전정복 3 (정가: 3만2천원)  
 - 참고도서 샘플소스: http://www.webdongne.com/bbs/bbs/board.php?bo_table=wbook_list&wr_id=10  
 - (20.12.11) 현재 ES6 표준에 class가 존재하지만, IE11에서는 지원하지 않는다. 하여 크롬 및 IE11에서 동작가능한 ES6 이전 문법을 기준으로 본 글을 정리한다.  
 - ES6 호환성 : https://kangax.github.io/compat-table/es6/  
