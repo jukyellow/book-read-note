@@ -299,11 +299,24 @@ alert(result) // 실행결과 = "1234”;
 ```
 
 #### 5.2.5 패키지  
-- 문법 : 오브젝트 리터럴
+- java 문법  
+``` java
+package 패키지명
+public class 클래스이름 { ... }
+//접근: 패키지명.클래스이름
+```
+- Javascript 문법 : 패키지 문법 제공하지 않음, 오브젝트 리터럴로 흉내를 내서 사용  
 ``` javascript
-var packageName1 = {} //방법1
-var packageName2 = new Object() //방법2
+var packageName1 = {} //선언 방법1
+var packageName2 = new Object() //선언 방법2
+packageName.className = function(){ ... }
 
+//예제
+var MyUtil = {}
+MyUtil.utils = {}
+MyUtil.utils.String = function(){...}
+//인스턴스 생성
+var myStr = new MyUtil.utils.String();
 ```
 
 ### 5.3 Jquery 플러그인 제작
