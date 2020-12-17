@@ -280,6 +280,12 @@ TabMenu.getInfo=function(){
     return info;
 }
 $(document).ready(function(){
+    // 인스턴스 생성
+    var tab1 = new TabMenu("#tabMenu1");
+    tab1.setSelectItemAt(1);
+    var tab2 = new TabMenu("#tabMenu2");
+    tab2.setSelectItemAt(2);
+
     console.log(TabMenu.getInfo()); // 정보 출력
 });
 
