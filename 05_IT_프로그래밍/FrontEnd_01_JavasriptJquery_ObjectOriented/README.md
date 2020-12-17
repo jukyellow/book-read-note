@@ -258,6 +258,40 @@ $(document).ready(function(){
 ```
 
 #### 5.2.4 인스턴스 프로퍼티 메서드 vs 클래스 프로퍼티 메소드  
+- 인스턴스 프로퍼티/메소드: new를 통해 객체를 생성한 후 사용하는 방식  
+- 클래스 프로퍼티/메소드: java static 변수/함수처럼 인스턴스 생성없이 바로 사용하는 방식(독립적 실행가능한 유틸리티성 기능 구현시 주로 사용)    
+``` javascript
+function TabMenu(selector) {
+    this.$tabMenu = null;
+    this.$menuItems = null;
+    this.$selectMenuItem = null;
+    // 요소 초기화 및 이벤트 등록 호출하기
+    this.init(selector);
+    this.initEvent();
+}
+// 탭메뉴 정보 추가
+TabMenu.version = "1.0";
+TabMenu.getInfo=function(){
+    var info = {
+	developer:"딴동네",
+	email:"ddandongne@webdongne.com",
+	desc:"탭메뉴를 구현한 클래스입니다."
+    }
+    return info;
+}
+$(document).ready(function(){
+    console.log(TabMenu.getInfo()); // 정보 출력
+});
+
+//다른예1) Math 함수
+Math.floor(Math.random()*10); // 0에서 10사이의 랜덤 숫자 만들기
+alert(Math.max(10,20)); // 두 수중 큰 숫자 값 알아내기
+//다른예2) Jquery trim함수
+var data = "   1234  ";     // 문자열 좌우에 공백이 포함되어 있어요.
+var result = jQuery.trim(data); // jQuery의 trim() 메서드를 활용해 좌우 공백 제거
+alert(result) // 실행결과 = "1234”;
+```
+
 #### 5.2.5 패키지  
 
 ### 5.3 Jquery 플러그인 제작
