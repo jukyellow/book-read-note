@@ -319,15 +319,16 @@ MyUtil.utils.String = function(){...}
 //인스턴스 생성
 var myStr = new MyUtil.utils.String();
 ```
+<br>
 
 ### 5.3 Jquery 플러그인 제작
-#### 5.3.1 Jquery 확장  
-- 1. 유틸리티: 인스턴스를 생성하지 않고, Jquery 클래스에 직접 접근하여 사용  
+#### 5.3.1 Jquery 확장(유틸리티와 플러그인)  
+- 유틸리티: 인스턴스를 생성하지 않고, Jquery 클래스에 직접 접근하여 사용  
 ``` javascript
 //Jquery.유틸리티() or $.유틸리티()
 Jquery.trim("  123 AAA "); //123 AAA
 ```
-- 2. 플러그인: Jquery 인스턴스를 생성한 후, 특정 노드를 다루는 기능을 재사용하고자 할때 포장하는 기능  
+- 플러그인: Jquery 인스턴스를 생성한 후, 특정 노드를 다루는 기능을 재사용하고자 할때 포장하는 기능  
 ``` javascript
 $("선택자").플러그인(옵션)
 var $결과 = $("선택자");
