@@ -182,7 +182,7 @@ console.log("1. uesrName = "+userName); /* 실행결과 :  userName = test  */
 ```
 
 #### 5.2.3 함수단위 코딩 vs 클래스 단위코딩  
-- 참고소스: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_3_3_class_coding.html  
+- 참고소스: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_2_3_class_coding.html  
 ``` javascript
 $(document).ready(function(){
     var tab1 = tabMenu("#tabMenu1");
@@ -321,9 +321,81 @@ var myStr = new MyUtil.utils.String();
 ```
 
 ### 5.3 Jquery 플러그인 제작
-- Jquery 확장   
-- Jquery 유틸리티 구현  
-- Jquery 플러그인 구현  
+#### 5.3.1 Jquery 확장  
+- 1. 유틸리티: 인스턴스를 생성하지 않고, Jquery 클래스에 직접 접근하여 사용  
+``` javascript
+//Jquery.유틸리티() or $.유틸리티()
+Jquery.trim("  123 AAA "); //123 AAA
+```
+- 2. 플러그인: Jquery 인스턴스를 생성한 후, 특정 노드를 다루는 기능을 재사용하고자 할때 포장하는 기능  
+``` javascript
+$("선택자").플러그인(옵션)
+var $결과 = $("선택자");
+$결과.플러그인(옵션);
+```
+#### 5.3.2 Jquery 유틸리티 구현  
+- 문법(구조)  
+``` javascript
+(function($){
+    $.유틸리티 = function(){...} //기능구현
+})(jQuery)
+```
+- 예제  
+``` javascript
+(function($){
+$.addComma=function(value){
+    var data = value+""; // 숫자를 문자로 형변환;
+    var aryResult = data.split(""); // 문자를 배열로 만들기
+    var startIndex = aryResult.length-3; // 배열 요소를 뒤에서 3자리 마다 콤마 추가하기
+    for(var i=startIndex;i>0;i-=3) {
+	aryResult.splice(i, 0, ",");
+    }
+    return aryResult.join(""); // 결과 값 리턴
+}	
+})(jQuery);
+$(document).ready(function(){
+document.write("1234 =>", $.addComma("1234"), "<br>");   //1234 =>1,234
+document.write("12345 =>", $.addComma("12345"), "<br>"); //12345 =>12,345
+});
+```
+#### 5.3.3 Jquery 플러그인 구현  
+- 문법(구조)  
+``` javascript
+(function($){
+    $.fn.플러그인이름 = function(속성값){ // $.fn은 prototype의 닉네임으로 선언됨(Jquery.fn = Jquery.prototype = function(){ ... })
+        this.each(function(index){ // Jquery 인스턴스(노드)에서 호출함으로, this는 Jquery 객체 자체 -> Jquery에서 선언된 each(반복탐색)를 호출
+	    //기능구현
+	}
+	return this; // Jquery 체인을 위해 다시 반환, ex: $.플러그인이름.또다른기능()
+    }
+})(Jquery)
+```
+- 예제 : https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_3_3_plugin_removeAni.html  
+``` javascript
+// 플러그인 만들기
+(function($){
+    $.fn.removeAni=function(){
+	this.each(function(index){ // 요소 개수만큼 루프 실행
+	    var $target= $(this); // 현재 요소 얻기
+	    $target.delay(index*1000).animate({ // 딜레이(index*1000) 후 애니메이션 실행
+		height:0
+	    },500,function(){
+		$target.remove(); // 애니 종료 후 현재 요소 제거
+	    })
+	})
+	return this;
+    }
+})(jQuery)
+$(document).ready(function(){
+    $(".menu li").removeAni(); // removeAni() 플러그인 호출
+});
+```
+#### 5.3.4 Jquery 클래스 기반 플러그인  
+#### 5.3.5 Jquery 플러그인 그룹   
+#### 5.3.6 Jquery extend()를 활용한 플러그인 옵션처리
+- 예제  
+``` javascript
+```
 
 <br>
 <br>
