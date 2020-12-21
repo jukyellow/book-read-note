@@ -405,13 +405,99 @@ $(document).ready(function(){
     $(".menu li").removeAni(); // removeAni() 플러그인 호출
 });
 ```
-#### 5.3.4 Jquery 클래스 기반 플러그인  
-#### 5.3.5 Jquery 플러그인 그룹   
-#### 5.3.6 Jquery extend()를 활용한 플러그인 옵션처리
-- 예제  
+#### 5.3.4 Jquery 클래스 기반 플러그인 
+- 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_3_5_plugin_class.html   
 ``` javascript
+$(document).ready(function(){
+	$(".tab-menu").tabMenu(); // 플러그인 호출
+});
+// tabMenu 플러그인
+(function($){
+	function TabMenu(selector) {
+		this.$tabMenu = null;
+		this.$menuItems = null;
+		this.$selectMenuItem = null;
+		this.init(selector);// 요소 초기화및 이벤트 등록 호출하기
+		this.initEvent();
+	}
+	TabMenu.prototype.init = function(selector) { // 요소 초기화
+		this.$tabMenu = $(selector);
+		this.$menuItems = this.$tabMenu.find("li");
+	}
+	TabMenu.prototype.initEvent = function() { // 이벤트 등록
+		var objThis = this;
+		this.$menuItems.on("click", function() {
+			objThis.setSelectItem($(this));
+		});
+	}
+	TabMenu.prototype.setSelectItem = function($menuItem) { // $menuItem에 해당하는 메뉴 아이템 선택하기
+		if (this.$selectMenuItem) { // 기존 선택메뉴 아이템을 비활성화 처리 하기
+			this.$selectMenuItem.removeClass("select");
+		}
+		this.$selectMenuItem = $menuItem; // 신규 아이템 활성화 처리 하기
+		this.$selectMenuItem.addClass("select");
+	}
+	
+	$.fn.tabMenu=function(){
+		this.each(function(index){
+			var tabMenu = new TabMenu(this); // 구현 코드 위치
+		})
+		return this;
+	}
+})(jQuery)
 ```
+#### 5.3.5 Jquery 플러그인 그룹(가칭)     
+- 예제: https://github.com/jukyellow/book-read-note/blob/master/05_IT_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/FrontEnd_01_JavasriptJquery_ObjectOriented/5_3_6_plugin_group.html  
+``` javascript
+$(document).ready(function(){
+	$(".tab-menu").tabMenu().selectTabMenuItemAt(1); // 플러그인 호출
+});
+// tabMenu 플러그인
+(function($){
+	function TabMenu(selector) {
+		this.$tabMenu = null;
+		this.$menuItems = null;
+		this.$selectMenuItem = null;
+		this.init(selector);// 요소 초기화및 이벤트 등록 호출하기
+		this.initEvent();
+	}
+	TabMenu.prototype.init = function(selector) { // 요소 초기화
+		this.$tabMenu = $(selector);
+		this.$menuItems = this.$tabMenu.find("li");
+	}
+	TabMenu.prototype.initEvent = function() { // 이벤트 등록
+		var objThis = this;
+		this.$menuItems.on("click", function() {
+			objThis.setSelectItem($(this));
+		});
+	}
+	TabMenu.prototype.setSelectItem = function($menuItem) { // $menuItem에 해당하는 메뉴 아이템 선택하기
+		if (this.$selectMenuItem) { // 기존 선택메뉴 아이템을 비활성화 처리 하기
+			this.$selectMenuItem.removeClass("select");
+		}
+		this.$selectMenuItem = $menuItem; // 신규 아이템 활성화 처리 하기
+		this.$selectMenuItem.addClass("select");
+	}
+	
+	$.fn.tabMenu=function(){
+		this.each(function(index){
+			var tabMenu = new TabMenu(this); // 구현 코드 위치
+			$(this).data("tabMenu", tabMenu); // TabMenu 객체 저장!
+		})
+		return this;
+	}
+	$.fn.selectTabMenuItemAt=function(selectIndex){ // n번째 탭메뉴 아이템 선택하기
+		this.each(function(index){
+			var tabMenu = $(this).data("tabMenu"); // 저장한 TabMenu 객체 구하기
+			if(tabMenu){
+				tabMenu.setSelectItem(tabMenu.$menuItems.eq(selectIndex)); // n번째 메뉴 아이템 선택하기
+			}
+		})
 
+		return this;
+	}
+})(jQuery)
+```
 <br>
 <br>
 
