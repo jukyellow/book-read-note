@@ -16,4 +16,6 @@
 - 출간: 2007년 (개정판: 2016년)  
 - 독서기간: 2019/08/23 ~ 
 
+### 3. [결국 해내는 사람들의 원칙](https://github.com/jukyellow/book-read-note/blob/master/01_%EC%9D%B8%EB%AC%B8%ED%95%99/03_%EA%B2%B0%EA%B5%AD%ED%95%B4%EB%82%B4%EB%8A%94%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%98%EC%9B%90%EC%B9%99.md)
+  
 
